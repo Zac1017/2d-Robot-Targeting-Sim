@@ -32,40 +32,19 @@ public class Target {
         double targetAngle =  Math.toDegrees(Math.atan2(getYDistance(), getXDistance()));
         double angle = targetAngle - heading;
 
-        while (true) {
-            if (angle < 0) {
-                angle += 360;
-            } else if (angle >= 360) {
-                angle -= 360;
-            } else {
-                break;
-            }
+        while (angle > 180) {
+            angle -= 360;
+        }
+
+        while (angle < -180) {
+            angle += 360;
         }
         
 
         return angle;
     }
 
-    public char getPlusMinus() {
-        double targetAngle = Math.toDegrees(Math.atan2(getYDistance(), getXDistance()));
-        
-        double angle = targetAngle - heading;
-
-        while (true) {
-            if (angle < -180) {
-                angle += 180;
-            } else if (angle >= 180) {
-                angle -= 180;
-            } else {
-                break;
-            }
-        }
-
-        if (angle < 0) {
-            return '-';
-        } else {
-            return '+';
-        }
-
+    public String getPlus() {
+        return getAngleToTarget() >= 0 ? "+" : "";
     }
 }

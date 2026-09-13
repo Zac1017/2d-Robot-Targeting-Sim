@@ -19,6 +19,7 @@ public class Main {
         Target target = new Target(roboX, roboY, targetX, targetY, heading);
         
         System.out.println("Distance to target: " + target.getDistance());
-        System.out.println("Angle to target: " + target.getPlusMinus() + target.getAngleToTarget());
+        System.out.println("Angle to target: " + target.getPlus() + target.getAngleToTarget());
+        
     }
 }
