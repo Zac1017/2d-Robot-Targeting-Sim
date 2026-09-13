@@ -47,4 +47,19 @@ public class Target {
     public String getPlus() {
         return getAngleToTarget() >= 0 ? "+" : "";
     }
+
+    public double getRelativeX() {
+        double headingInRadians = Math.toRadians(heading);
+
+        return getXDistance() * Math.cos(headingInRadians)
+            + getYDistance() * Math.sin(headingInRadians);
+    }
+
+    public double getRelativeY() {
+        double headingInRadians = Math.toRadians(heading);
+
+        return -getXDistance() * Math.sin(headingInRadians)
+            + getYDistance() * Math.cos(headingInRadians);
+    }
+
 }

@@ -20,6 +20,9 @@ public class Main {
         
         System.out.println("Distance to target: " + target.getDistance());
         System.out.println("Angle to target: " + target.getPlus() + target.getAngleToTarget());
+
+        System.out.println("Relative X to target: " + target.getRelativeX());
+        System.out.println("Relative Y to target: " + target.getRelativeY());
         
     }
 }
